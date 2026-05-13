@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ff7a18" />
+  <title>Sri Krishna Sweets &amp; Bakery</title>
+  <meta name="description" content="Sri Krishna Sweets & Bakery — premium sweets, cakes and bakery items. Order easily via WhatsApp." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Sri Krishna Sweets & Bakery home">
+        <span class="brand__logo" aria-hidden="true">SK</span>
+        <span class="brand__text">
+          <strong>Sri Krishna</strong>
+          <span>Sweets &amp; Bakery</span>
+        </span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__links" data-nav-links>
+        <a href="#menu">Menu</a>
+        <a href="#featured">Featured</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" href="login.html" title="Admin Login">Admin</a>
+        <a class="btn btn--primary btn--sm" data-whatsapp-business href="#" rel="noopener">Order on WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <p class="pill">Premium • Fresh Daily • Made with Love</p>
+          <h1>Real sweets, rich cakes, and fresh bakes — <span class="accent">crafted for celebrations</span>.</h1>
+          <p class="lead">Discover authentic Indian sweets, elegant cakes, and bakery favourites. Browse, filter, and order instantly via WhatsApp — no waiting.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#menu">Explore Menu</a>
+            <a class="btn btn--ghost" href="#offers">Today’s Offers</a>
+          </div>
+
+          <div class="hero__mini-offer reveal" aria-live="polite">
+            <div class="mini-offer__badge">Offer</div>
+            <div class="mini-offer__text">
+              <div class="mini-offer__title" data-mini-offer-title>Loading offers…</div>
+              <div class="mini-offer__desc" data-mini-offer-desc> </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__banner reveal" aria-label="Bakery banner image">
+          <div class="banner-card">
+            <div class="banner-card__top">
+              <div class="banner-chip">Sweets</div>
+              <div class="banner-chip">Cakes</div>
+              <div class="banner-chip">Bakery</div>
+            </div>
+            <div class="banner-card__title">Taste that feels premium.</div>
+            <div class="banner-card__sub">Fresh batches • Hygienic kitchen • Elegant packaging</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__wave" aria-hidden="true"></div>
+    </section>
+
+    <section class="highlights">
+      <div class="container highlights__grid">
+        <div class="highlight reveal">
+          <div class="highlight__icon" aria-hidden="true">★</div>
+          <div>
+            <h3>Baking</h3>
+            <p>Baking is love made edible" and "All you knead is love.</p>
+          </div>
+        </div>
+        <div class="highlight reveal">
+          <div class="highlight__icon" aria-hidden="true">✓</div>
+          <div>
+            <h3>WhatsApp Ordering</h3>
+            <p>Every product has a ready-to-send WhatsApp message.</p>
+          </div>
+        </div>
+        <div class="highlight reveal">
+          <div class="highlight__icon" aria-hidden="true">⚡</div>
+          <div>
+            <h3>MADE WITH LOVE</h3>
+            <p>HYGIENE IS OUR SIGNATURE.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="offers">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Offers</h2>
+          <p class="muted">Fresh deals updated by admin — instantly visible here.</p>
+        </div>
+
+        <div class="offers" data-offers-list aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="featured">
+      <div class="container">
+       
+
+        <div class="slider reveal" data-featured-slider>
+          <div class="slider__track" data-featured-track></div>
+          <div class="slider__controls">
+            <button class="icon-btn" type="button" aria-label="Previous" data-featured-prev>&larr;</button>
+            <div class="dots" data-featured-dots aria-label="Featured slider dots"></div>
+            <button class="icon-btn" type="button" aria-label="Next" data-featured-next>&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Product Menu</h2>
+          <p class="muted">Search and filter by category. Everything updates instantly.</p>
+        </div>
+
+        <div class="toolbar reveal">
+          <div class="searchbox">
+            <span class="searchbox__icon" aria-hidden="true">⌕</span>
+            <input type="search" placeholder="Search sweets, cakes, bakery..." aria-label="Search products" data-search />
+          </div>
+
+          <div class="filters">
+            <div class="chips" role="tablist" aria-label="Category filter">
+              <button class="chip is-active" type="button" data-chip="All">All</button>
+              <button class="chip" type="button" data-chip="Sweets">Sweets</button>
+              <button class="chip" type="button" data-chip="Cakes">Cakes</button>
+              <button class="chip" type="button" data-chip="Bakery">Bakery</button>
+            </div>
+
+            <label class="select">
+              <span class="sr-only">Filter by category</span>
+              <select data-category>
+                <option value="All">All Categories</option>
+                <option value="Sweets">Sweets</option>
+                <option value="Cakes">Cakes</option>
+                <option value="Bakery">Bakery</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="count muted" data-result-count></div>
+
+        <div class="grid" data-products-grid aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section--cta">
+      <div class="container cta reveal">
+        <div>
+          <h2>Ready to order?</h2>
+          <p class="muted">Tap the WhatsApp button and your order message is pre-filled.</p>
+        </div>
+        <a class="btn btn--primary" data-whatsapp-business href="#" rel="noopener">Open WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div>
+        <div class="footer__brand">Sri Krishna Sweets &amp; Bakery</div>
+        <p class="muted">Premium sweets, cakes &amp; bakery items. .</p>
+      </div>
+      <div>
+        <div class="footer__title">Quick Links</div>
+        <a href="#menu">Menu</a>
+        <a href="#featured">Featured</a>
+        <a href="#offers">Offers</a>
+        <a href="login.html">Admin Login</a>
+      </div>
+      <div>
+        <div class="footer__title">Contact</div>
+        <p class="muted">WhatsApp ordering supported.</p>
+        <a class="btn btn--ghost btn--sm" data-whatsapp-business href="#" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span class="muted">© <span data-year></span> Sri Krishna Sweets &amp; Bakery</span>
+      <a class="muted" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-whatsapp-business href="#" aria-label="WhatsApp order">
+    <span class="wa-float__dot" aria-hidden="true"></span>
+    <span class="wa-float__icon" aria-hidden="true">WA</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

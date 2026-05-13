@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ff7a18" />
+  <title>Admin Panel • Sri Krishna Sweets &amp; Bakery</title>
+  <meta name="description" content="Admin panel for managing products and offers (LocalStorage only)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Back to homepage">
+        <span class="brand__logo" aria-hidden="true">SK</span>
+        <span class="brand__text">
+          <strong>Sri Krishna</strong>
+          <span>Sweets &amp; Bakery</span>
+        </span>
+      </a>
+
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" href="index.html">View Website</a>
+        <button class="btn btn--primary btn--sm" type="button" data-admin-logout>Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container admin">
+    <div class="admin__head reveal">
+      <div>
+        <h1>Admin Panel</h1>
+        <p class="muted">Manage products, featured items, and offer banners. Changes reflect instantly on the homepage.</p>
+      </div>
+      <div class="admin__stat">
+        <div class="stat">
+          <div class="stat__label">Products</div>
+          <div class="stat__value" data-admin-product-count>0</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Offers</div>
+          <div class="stat__value" data-admin-offer-count>0</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="panel reveal">
+      <div class="panel__tabs" role="tablist" aria-label="Admin sections">
+        <button class="tab is-active" type="button" data-admin-tab="products">Products</button>
+        <button class="tab" type="button" data-admin-tab="offers">Offers</button>
+        <button class="tab" type="button" data-admin-tab="settings">Settings</button>
+      </div>
+
+      <div class="panel__body">
+        <!-- PRODUCTS -->
+        <div class="tab-panel is-active" data-admin-panel="products">
+          <div class="two-col">
+            <div class="card">
+              <div class="card__head">
+                <h2>Add Product</h2>
+                <p class="muted">New items are saved in LocalStorage and appear on the homepage instantly.</p>
+              </div>
+              <form class="form" data-add-product>
+                <label class="field">
+                  <span>Product Name</span>
+                  <input type="text" name="name" placeholder="e.g., Kaju Katli" required />
+                </label>
+
+                <label class="field">
+                  <span>Price (₹)</span>
+                  <input type="number" name="price" min="1" step="1" placeholder="e.g., 350" required />
+                </label>
+
+                <label class="field">
+                  <span>Category</span>
+                  <select name="category" required>
+                    <option value="Sweets">Sweets</option>
+                    <option value="Cakes">Cakes</option>
+                    <option value="Bakery">Bakery</option>
+                  </select>
+                </label>
+
+                <label class="field">
+                  <span>Product Image (optional)</span>
+                  <input type="file" name="image" accept="image/*" />
+                </label>
+                <div class="muted small">If you don’t upload an image, a product-specific image will be generated automatically from the product name.</div>
+
+                <label class="check">
+                  <input type="checkbox" name="featured" />
+                  <span>Mark as featured</span>
+                </label>
+
+                <button class="btn btn--primary btn--block" type="submit">Add Product</button>
+                <div class="form__msg" role="status" aria-live="polite" data-add-product-msg></div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card__head">
+                <h2>All Products</h2>
+                <p class="muted">Toggle featured or delete products.</p>
+              </div>
+
+              <div class="table-wrap">
+                <table class="table" aria-label="Products table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th class="right">Price</th>
+                      <th class="center">Featured</th>
+                      <th class="right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody data-admin-products></tbody>
+                </table>
+              </div>
+
+              <div class="muted small">Tip: Featured products appear in the homepage slider.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OFFERS -->
+        <div class="tab-panel" data-admin-panel="offers">
+          <div class="two-col">
+            <div class="card">
+              <div class="card__head">
+                <h2>Add Offer</h2>
+                <p class="muted">Offer banners show on the homepage instantly.</p>
+              </div>
+              <form class="form" data-add-offer>
+                <label class="field">
+                  <span>Offer Title</span>
+                  <input type="text" name="title" placeholder="e.g., Weekend Special" required />
+                </label>
+                <label class="field">
+                  <span>Description</span>
+                  <input type="text" name="description" placeholder="e.g., Flat 10% off on selected sweets" required />
+                </label>
+                <label class="field">
+                  <span>Tag (optional)</span>
+                  <input type="text" name="tag" placeholder="e.g., NEW / HOT / FESTIVE" />
+                </label>
+
+                <button class="btn btn--primary btn--block" type="submit">Add Offer</button>
+                <div class="form__msg" role="status" aria-live="polite" data-add-offer-msg></div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card__head">
+                <h2>All Offers</h2>
+                <p class="muted">Delete offers anytime.</p>
+              </div>
+
+              <div class="list" data-admin-offers></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="tab-panel" data-admin-panel="settings">
+          <div class="two-col">
+            <div class="card">
+              <div class="card__head">
+                <h2>WhatsApp Number</h2>
+                <p class="muted">Used for all order buttons (format: countrycode + number).</p>
+              </div>
+              <form class="form" data-settings-form>
+                <label class="field">
+                  <span>Business WhatsApp Number</span>
+                  <input type="tel" name="whatsapp" placeholder="e.g., 919876543210" />
+                </label>
+                <button class="btn btn--primary btn--block" type="submit">Save Settings</button>
+                <div class="form__msg" role="status" aria-live="polite" data-settings-msg></div>
+              </form>
+              <p class="muted small">If empty, the demo number will be used.</p>
+            </div>
+
+            <div class="card">
+              <div class="card__head">
+                <h2>Maintenance</h2>
+                <p class="muted">Reset demo data if required.</p>
+              </div>
+              <button class="btn btn--danger btn--block" type="button" data-reset-demo>Reset Products &amp; Offers</button>
+              <p class="muted small">This clears LocalStorage items for this site and restores demo seed data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

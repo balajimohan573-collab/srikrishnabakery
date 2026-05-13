@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ff7a18" />
+  <title>Admin Login • Sri Krishna Sweets &amp; Bakery</title>
+  <meta name="description" content="Admin login for Sri Krishna Sweets & Bakery" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="login">
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Back to homepage">
+        <span class="brand__logo" aria-hidden="true">SK</span>
+        <span class="brand__text">
+          <strong>Sri Krishna</strong>
+          <span>Sweets &amp; Bakery</span>
+        </span>
+      </a>
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" href="index.html">Home</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="auth container">
+    <div class="auth-card reveal">
+      <div class="auth-card__head">
+        <h1>Admin Login</h1>
+        <p class="muted">Use your admin credentials to manage products and offers.</p>
+      </div>
+
+      <form class="form" data-login-form>
+        <label class="field">
+          <span>Username</span>
+          <input type="text" name="username" autocomplete="username" placeholder="admin" required />
+        </label>
+
+        <label class="field">
+          <span>Password</span>
+          <input type="password" name="password" autocomplete="current-password" placeholder="admin123" required />
+        </label>
+
+        <button class="btn btn--primary btn--block" type="submit">Login</button>
+        <div class="form__msg" role="status" aria-live="polite" data-login-msg></div>
+      </form>
+
+      <div class="auth-card__foot muted">
+        Demo credentials: <strong>admin</strong> / <strong>admin123</strong>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
